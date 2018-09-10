@@ -98,6 +98,7 @@
     <Content Include="content\js\jquery-2.1.1.min.js" />
     <Content Include="content\js\startup.js" />
     <Content Include="content\js\toastr.min.js" />
+    <Content Include="ng-demo-02\index.html" />
     <Content Include="packages.config" />
     <Content Include="content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="content\fonts\glyphicons-halflings-regular.ttf" />

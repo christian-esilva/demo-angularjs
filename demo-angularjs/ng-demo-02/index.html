@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>Utilizando Controller e $scope</title>
+	<meta charset="utf-8" />
+    <link href="../content/css/themes/bootstrap-default.min.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <div class="container" ng-controller="MeuCtrl">
+        <h1> {{ title }}</h1>
+
+        <ul>
+            <li ng-repeat="item in items">{{item.id}} - {{item.title}}</li>
+        </ul>
+        <br/>
+        <hr />
+        <br />
+
+        <input type="text" class="form-control" ng-model="mensagem" placeholder="Mensagem"/>
+        <button class="btn btn-primary" ng-click="disparaAlerta()">Alerta padrão</button>
+        <button class="btn btn-primary" ng-click="disparaAlertaPersonalizado(mensagem)">Alerta personalizado</button>
+    </div>
+
+    <script src="../content/js/angular.min.js"></script>
+    <script>
+        function MeuCtrl($scope) {
+            $scope.title = "Meus itens";
+            $scope.items = [
+                { id: 1, title: "Item 01" },
+                { id: 2, title: "Item 02" },
+                { id: 3, title: "Item 03" },
+                { id: 4, title: "Item 04" }
+            ];
+
+            $scope.disparaAlerta = function () {
+                alert("teste alerta");
+            }
+
+            $scope.disparaAlertaPersonalizado = function (mensagem) {
+                alert(mensagem);
+            }
+        }
+    </script>
+</body>
+</html>
