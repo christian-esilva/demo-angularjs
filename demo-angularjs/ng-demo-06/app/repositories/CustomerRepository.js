@@ -7,10 +7,10 @@
 
     CustomerRepository.$inject = ['$http'];
 
-    function CustomerRepository($htpp) {
+    function CustomerRepository($http) {
         return {
             getAllCustomers: function () {
-                return $htpp.get('app/data/customers.json')
+                return $http.get('app/data/customers.json');
             }
         }
     }
