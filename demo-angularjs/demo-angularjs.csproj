@@ -107,6 +107,7 @@
     <Content Include="ng-demo-06\app\app.js" />
     <Content Include="ng-demo-06\app\areas\home\controllers\HomeCtrl.js" />
     <Content Include="ng-demo-06\app\areas\home\views\index.html" />
+    <Content Include="ng-demo-06\app\repositories\CustomerRepository.js" />
     <Content Include="ng-demo-06\index.html" />
     <Content Include="packages.config" />
     <Content Include="content\fonts\glyphicons-halflings-regular.eot" />
@@ -135,7 +136,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ng-demo-06\app\directives\" />
-    <Folder Include="ng-demo-06\app\repositories\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
