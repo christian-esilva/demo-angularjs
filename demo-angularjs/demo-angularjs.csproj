@@ -103,6 +103,11 @@
     <Content Include="ng-demo-04\index.html" />
     <Content Include="ng-demo-05\index.html" />
     <Content Include="ng-demo-05\my-customer-badge.html" />
+    <Content Include="ng-demo-06\404.html" />
+    <Content Include="ng-demo-06\app\app.js" />
+    <Content Include="ng-demo-06\app\areas\home\controllers\HomeCtrl.js" />
+    <Content Include="ng-demo-06\app\areas\home\views\index.html" />
+    <Content Include="ng-demo-06\index.html" />
     <Content Include="packages.config" />
     <Content Include="content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="content\fonts\glyphicons-halflings-regular.ttf" />
@@ -113,6 +118,7 @@
     <Content Include="content\js\angular-sanitize.min.js.map" />
     <Content Include="content\js\angular-touch.min.js.map" />
     <Content Include="content\js\angular.min.js.map" />
+    <Content Include="ng-demo-06\app\data\customers.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -128,7 +134,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ng-demo-06\" />
+    <Folder Include="ng-demo-06\app\directives\" />
+    <Folder Include="ng-demo-06\app\repositories\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
