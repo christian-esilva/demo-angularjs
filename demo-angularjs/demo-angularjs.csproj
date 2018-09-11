@@ -100,6 +100,9 @@
     <Content Include="content\js\toastr.min.js" />
     <Content Include="ng-demo-02\index.html" />
     <Content Include="ng-demo-03\index.html" />
+    <Content Include="ng-demo-04\index.html" />
+    <Content Include="ng-demo-05\index.html" />
+    <Content Include="ng-demo-05\my-customer-badge.html" />
     <Content Include="packages.config" />
     <Content Include="content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="content\fonts\glyphicons-halflings-regular.ttf" />
@@ -123,6 +126,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ng-demo-06\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>Diretivas no AngularJs</title>
+    <meta charset="utf-8" />
+    <link href="../content/css/themes/bootstrap-spacelab.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container" ng-controller="MeuCtrl">
+        <h1>{{ title }}</h1>
+        <hr/>
+        <div class="row">
+            <div my-customer></div>
+        </div>
+        <hr />
+        <div class="row">
+            <div my-customer-badge></div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-4" ng-repeat="cliente in clientes" my-customer-generic cliente ="cliente"></div>
+        </div>
+    </div>
+
+    <script src="../content/js/angular.min.js"></script>
+    <script>
+        var app = angular.module('app', []);
+        app.controller('MeuCtrl', ['$scope', function ($scope) {
+            $scope.title = "Minhas diretivas";
+
+            $scope.cliente = {
+                nome: 'Christian',
+                sobrenome: 'Silva',
+                imagem: 'http://placehold.it/80x80',
+                desc: 'mito dos mitos'
+            };
+
+            $scope.clientes = [{
+                nome: 'André',
+                sobrenome: 'Baltieri',
+                imagem: 'http://placehold.it/80x80',
+                desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper sem vitae urna pellentesque, tempus eleifend erat vulputate. Fusce eu massa nec diam fermentum tincidunt. Cras consequat, orci et elementum tristique, elit est porttitor purus, ac fringilla dolor risus non metus. Morbi faucibus sodales felis, nec malesuada velit ultrices vel. Etiam ac neque non elit cursus lacinia non sit amet erat. Maecenas varius sem turpis, eu lacinia magna consectetur at. Integer non sodales ex.'
+            }, {
+                nome: 'Bruce',
+                sobrenome: 'Wayne',
+                imagem: 'http://placehold.it/80x80',
+                desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper sem vitae urna pellentesque, tempus eleifend erat vulputate. Fusce eu massa nec diam fermentum tincidunt. Cras consequat, orci et elementum tristique, elit est porttitor purus, ac fringilla dolor risus non metus. Morbi faucibus sodales felis, nec malesuada velit ultrices vel. Etiam ac neque non elit cursus lacinia non sit amet erat. Maecenas varius sem turpis, eu lacinia magna consectetur at. Integer non sodales ex.'
+            }];
+        }]);
+
+        app.directive('myCustomer', function () {
+            return {
+                template: 'Nome: {{ cliente.nome }} {{ cliente.sobrenome }}'
+            }
+        });
+
+        app.directive('myCustomerBadge', function () {
+            return {
+                templateUrl: 'my-customer-badge.html'
+            }
+        });
+
+        app.directive('myCustomerGeneric', function () {
+            return {
+                templateUrl: 'my-customer-badge.html',
+                $scope: {
+                    cliente: '='
+                }
+            }
+        });
+    </script>
+</body>
+</html>
