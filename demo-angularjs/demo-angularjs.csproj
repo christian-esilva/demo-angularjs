@@ -109,6 +109,7 @@
     <Content Include="ng-demo-06\app\areas\home\views\index.html" />
     <Content Include="ng-demo-06\app\repositories\CustomerRepository.js" />
     <Content Include="ng-demo-06\index.html" />
+    <Content Include="ng-demo-07\index.html" />
     <Content Include="packages.config" />
     <Content Include="content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="content\fonts\glyphicons-halflings-regular.ttf" />

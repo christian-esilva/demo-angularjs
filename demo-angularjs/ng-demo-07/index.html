@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>CRUD</title>
+	<meta charset="utf-8" />
+    <link href="../content/css/themes/bootstrap-cosmo.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-controller="MeuCtrl">
+        <h1 class="text-center">CRUD</h1>
+        <div class="container text-center">
+            <button class="btn btn-info" ng-click="obter()">Get()</button>
+            <button class="btn btn-info" ng-click="obterPorId()">Get(23)</button>
+            <button class="btn btn-info" ng-click="criar()">POST</button>
+            <button class="btn btn-info" ng-click="alterar()">PUT</button>
+            <button class="btn btn-info" ng-click="excluir()">DELETE</button>
+        </div>
+    </div>
+
+    <script src="../content/js/angular.min.js"></script>
+    <script>
+        var app = angular.module('app', []);
+        app.controller('MeuCtrl', ['$scope', '$http', function ($scope, $http) {
+            $scope.title = "Meu Controller";
+
+            var serviceUrl = 'http://localhost:63936/api/customers/';
+
+            $scope.obter = function () {
+                $http.get(serviceUrl)
+                    .success(function (result, status, headers, config) {
+                        console.log(result);
+                    });
+            }
+
+            $scope.obterPorId = function (id) {
+                $http.get(serviceUrl + '23')
+                    .success(function (result, status, headers, config) {
+                        console.log(result);
+                });
+            }
+
+            $scope.criar = function () {
+            }
+
+            $scope.alterar = function () {
+            }
+
+            $scope.excluir = function () {
+            }
+            
+        }]);
+    </script>
+</body>
+</html>
