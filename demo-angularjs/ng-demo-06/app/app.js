@@ -1,6 +1,7 @@
 ﻿(function () {
     'use strict';
-    var app = angular.module('app', ['ngAnimate', 'ngRoute']);
+
+    var app = angular.module('app', ['ngRoute', 'ngAnimate']);
 
     app.config(function ($routeProvider) {
         $routeProvider
@@ -9,8 +10,13 @@
                 templateUrl: 'app/areas/home/views/index.html'
             })
             .otherwise({
-                controller: 'HomeCtrl',
-                templateUrl: '404.html'
-            })
+                controller: 'HomeCtrl as vm',
+                templateUrl: '404.html',
+                requiresLogin: false
+            });
+    });
+
+    app.controller('AppCtrl', function AppCtrl($scope) {
+        $scope.title = 'Demo 06';
     });
 })();

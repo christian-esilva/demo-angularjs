@@ -1,6 +1,7 @@
 ﻿<h1>{{ title }}</h1>
+<input type="text" ng-model="search" placeholder="Search..." class="form-control"/>
 <ul class="list-unstyled">
-    <li ng-repeat="customer in customers">
+    <li ng-repeat="customer in customers | filter: search">
         {{ customer.firstName }} -
         {{ customer.lastName }} -
         {{ customer.email }}
