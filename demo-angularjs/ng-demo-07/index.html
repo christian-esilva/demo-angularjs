@@ -23,7 +23,7 @@
         app.controller('MeuCtrl', ['$scope', '$http', function ($scope, $http) {
             $scope.title = "Meu Controller";
 
-            var serviceUrl = 'http://localhost:63936/api/customers/';
+            var serviceUrl = 'http://localhost:63936/api/public/v1/customers/';
 
             $scope.obter = function () {
                 $http.get(serviceUrl)
@@ -40,12 +40,38 @@
             }
 
             $scope.criar = function () {
+                var cliente = {
+                    id: 0,
+                    firstName: 'Peter',
+                    lastName: 'Parker',
+                    email: 'peter.parker@spider.com'
+                };
+
+                $http.post(serviceUrl, cliente)
+                    .success(function (result, status, headers, config) {
+                    console.log(result);
+                 });
             }
 
             $scope.alterar = function () {
+                var cliente = {
+                    id: 401,
+                    firstName: 'Peter',
+                    lastName: 'Richard Parker',
+                    email: 'peter.parker@spider.com'
+                };
+
+                $http.put(serviceUrl, cliente)
+                    .success(function (result, status, headers, config) {
+                        console.log(result);
+                    });
             }
 
             $scope.excluir = function () {
+                $http.delete(serviceUrl + '401')
+                .success(function (result, status, headers, config) {
+                    console.log(result);
+                });
             }
             
         }]);
